@@ -1,6 +1,6 @@
 var mutual = 4;
 var occKeywords = "consilio, birkbeck";
-var posSearch = 0;
+var posSearch = false;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
