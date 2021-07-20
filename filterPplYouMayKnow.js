@@ -45,12 +45,12 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function addAll(p, mutual) {
+function addAll(p) {
     section = document.getElementsByClassName("relative pb2");
     pplUMayKnowElems = section[0].getElementsByClassName("ember-view display-flex ");
     noOfPplUMayKnow = pplUMayKnowElems.length;
     occk = occKeywords.trim().split(",");
-    for (var i = noOfPplUMayKnow; i >= 0; i--) {
+    for (var i = noOfPplUMayKnow-1; i >= p; i--) {
         var removed = false;
         if (pplUMayKnowElems[i] != undefined) {
             occupation = pplUMayKnowElems[i].getElementsByClassName("discover-person-card__occupation")[0].innerText;
@@ -70,10 +70,10 @@ function addAll(p, mutual) {
             showMorePplBtn = section[0].getElementsByClassName("artdeco-button artdeco-button--muted artdeco-button--1 artdeco-button--full artdeco-button--secondary ember-view");
             showMorePplBtn[0].click();
             scrollDown();
-            addAll(0, mutual)
+            addAll(noOfPplUMayKnow)
         } else {
-            addAll(0, mutual)
+            addAll(0)
         }
     });
 }
-addAll(0, mutual);
+addAll(0);
