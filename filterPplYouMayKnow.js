@@ -5,7 +5,7 @@ var posSearch = false;
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-function addAll(p, mutual) {
+function filterPpl(p, mutual) {
     section = document.getElementsByClassName("relative pb2");
     pplUMayKnowElems = section[0].getElementsByClassName("ember-view display-flex ");
     noOfPplUMayKnow = pplUMayKnowElems.length;
@@ -26,10 +26,10 @@ function addAll(p, mutual) {
         }
     }
     sleep(5000).then(() => {
-        addAll(0, mutual)
+        filterPpl(0, mutual)
     });
 }
-addAll(0, mutual);
+filterPpl(0, mutual);
 
 //With loading more freinds automatically as one scrolls down the page
 var mutual = 4;
@@ -45,7 +45,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function addAll(p) {
+function filterPpl(p) {
     section = document.getElementsByClassName("relative pb2");
     pplUMayKnowElems = section[0].getElementsByClassName("ember-view display-flex ");
     noOfPplUMayKnow = pplUMayKnowElems.length;
@@ -70,10 +70,10 @@ function addAll(p) {
             showMorePplBtn = section[0].getElementsByClassName("artdeco-button artdeco-button--muted artdeco-button--1 artdeco-button--full artdeco-button--secondary ember-view");
             showMorePplBtn[0].click();
             scrollDown();
-            addAll(noOfPplUMayKnow)
+            filterPpl(noOfPplUMayKnow)
         } else {
-            addAll(0)
+            filterPpl(0)
         }
     });
 }
-addAll(0);
+filterPpl(0);
